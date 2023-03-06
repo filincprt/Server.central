@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DB_AGSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gas_stations">
+          <Key>
+            <PropertyRef Name="station_id" />
+          </Key>
+          <Property Name="station_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price_AI92" Type="float" Nullable="false" />
+          <Property Name="price_AI95" Type="float" Nullable="false" />
+          <Property Name="price_AI98" Type="float" Nullable="false" />
+          <Property Name="price_diesel" Type="float" Nullable="false" />
+          <Property Name="remainder_AI92" Type="int" Nullable="false" />
+          <Property Name="remainder_AI95" Type="int" Nullable="false" />
+          <Property Name="remainder_AI98" Type="int" Nullable="false" />
+          <Property Name="remainder_diesel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище DB_AGSModelContainer">
+          <EntitySet Name="gas_stations" EntityType="Self.gas_stations" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_AGSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gas_stations">
+          <Key>
+            <PropertyRef Name="station_id" />
+          </Key>
+          <Property Name="station_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price_AI92" Type="Double" Nullable="false" />
+          <Property Name="price_AI95" Type="Double" Nullable="false" />
+          <Property Name="price_AI98" Type="Double" Nullable="false" />
+          <Property Name="price_diesel" Type="Double" Nullable="false" />
+          <Property Name="remainder_AI92" Type="Int32" Nullable="false" />
+          <Property Name="remainder_AI95" Type="Int32" Nullable="false" />
+          <Property Name="remainder_AI98" Type="Int32" Nullable="false" />
+          <Property Name="remainder_diesel" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_AGSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gas_stations" EntityType="Self.gas_stations" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DB_AGSModelContainer" CdmEntityContainer="DB_AGSEntities">
+          <EntitySetMapping Name="gas_stations">
+            <EntityTypeMapping TypeName="DB_AGSModel.gas_stations">
+              <MappingFragment StoreEntitySet="gas_stations">
+                <ScalarProperty Name="station_id" ColumnName="station_id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="price_AI92" ColumnName="price_AI92" />
+                <ScalarProperty Name="price_AI95" ColumnName="price_AI95" />
+                <ScalarProperty Name="price_AI98" ColumnName="price_AI98" />
+                <ScalarProperty Name="price_diesel" ColumnName="price_diesel" />
+                <ScalarProperty Name="remainder_AI92" ColumnName="remainder_AI92" />
+                <ScalarProperty Name="remainder_AI95" ColumnName="remainder_AI95" />
+                <ScalarProperty Name="remainder_AI98" ColumnName="remainder_AI98" />
+                <ScalarProperty Name="remainder_diesel" ColumnName="remainder_diesel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Server.central.Models.gas_stations>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price_AI92)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price_AI95)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price_AI98)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price_diesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remainder_AI92)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remainder_AI95)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remainder_AI98)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remainder_diesel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_AI92)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_AI95)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_AI98)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_diesel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remainder_AI92)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remainder_AI95)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remainder_AI98)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remainder_diesel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.station_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.station_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.station_id })
+        </td>
+    </tr>
+}
+
+</table>

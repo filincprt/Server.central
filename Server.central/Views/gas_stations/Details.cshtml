@@ -1,0 +1,90 @@
+﻿@model Server.central.Models.gas_stations
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>gas_stations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price_AI92)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price_AI92)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price_AI95)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price_AI95)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price_AI98)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price_AI98)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price_diesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price_diesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.remainder_AI92)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.remainder_AI92)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.remainder_AI95)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.remainder_AI95)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.remainder_AI98)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.remainder_AI98)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.remainder_diesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.remainder_diesel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.station_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
