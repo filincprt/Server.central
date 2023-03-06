@@ -7,13 +7,13 @@ using Server.central.Models;
 
 namespace Server.central.Controllers
 {
-    [RoutePrefix("api/gas_stations")]
+    [Route("api")]
     public class GasStationsController : ApiController
     {
         private DB_AGSEntities db = new DB_AGSEntities();
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("getStationinfo/{id}")]
         public IHttpActionResult Get(int id)
         {
             var gas_station = db.gas_stations.Find(id);
@@ -25,7 +25,7 @@ namespace Server.central.Controllers
         }
 
         [HttpPost]
-        [Route("{id}")]
+        [Route("SetStation/{id}")]
         public IHttpActionResult SetStation(gas_stations gas_station)
         {
             if (gas_station == null)
@@ -71,3 +71,4 @@ namespace Server.central.Controllers
     }
 
 }
+
