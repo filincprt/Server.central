@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.Results;
 using Server.central.Models;
 
 namespace Server.central.Controllers
@@ -54,6 +55,35 @@ namespace Server.central.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [HttpPost]
+        [Route("AddStation")]
+        public IHttpActionResult AddStation(gas_stations gas_station)
+        {
+            if (gas_station == null)
+            {
+                return BadRequest();
+            }
+
+            db.gas_stations.Add(gas_station);
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (GasStationExists(gas_station.station_id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute(nameof(Get), new { controller = "GasStationsController", id = gas_station.station_id }, gas_station);
+        }
 
         private bool GasStationExists(int id)
         {
